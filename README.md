@@ -1,5 +1,7 @@
 # LaTeX-ĐAMH
 
+[![LaTeX PDF and release](https://github.com/Ex6TenZ13/LaTeX-DAMH/actions/workflows/latex.yml/badge.svg?branch=main)](https://github.com/Ex6TenZ13/LaTeX-DAMH/actions/workflows/latex.yml)
+
 [![Mở bản PDF](preview.png)](https://github.com/Ex6TenZ13/LaTeX-DAMH/blob/main/Quyen_DAMH.pdf)
 
 Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Các bản PDF đã phát hành
@@ -35,6 +37,6 @@ MiKTeX cài package tự động, rồi build lại.
 ## Gói nguồn của release
 
 Mỗi release chứa `Quyen_DAMH.pdf` và `LaTeX-DAMH-source.zip`. File ZIP được tạo
-trực tiếp bằng `git archive`, vì vậy chỉ chứa đúng các tệp đã commit tại tag phát
-hành, không chứa thư mục `.git` hoặc file build tạm.
+trực tiếp từ commit của tag bằng `git archive`; README, thư mục `.git` và các file
+build tạm không nằm trong gói.
 
