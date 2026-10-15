@@ -5,19 +5,6 @@
 Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Các bản PDF đã phát hành
 có tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
 
-## Biên dịch
-
-Tài liệu chính là `Quyen_ĐAMH.tex`. Dự án dùng TeX Live, `latexmk`,
-`pdflatex` và BibTeX:
-
-```bash
-latexmk -pdf -interaction=nonstopmode -halt-on-error Quyen_ĐAMH.tex
-```
-
-GitHub Actions biên dịch tài liệu khi có thay đổi trên `main`, khi mở pull
-request, hoặc khi đẩy tag bắt đầu bằng `v`. Với tag `v*`, workflow tạo GitHub
-Release gồm PDF và gói mã nguồn lấy trực tiếp từ commit được gắn tag.
-
 ## Cài đặt trên Windows
 
 1. Cài [MiKTeX](https://miktex.org/download) bằng **Basic MiKTeX Installer**.
