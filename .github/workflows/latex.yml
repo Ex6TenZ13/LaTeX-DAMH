@@ -1,0 +1,75 @@
+name: Build LaTeX and publish release
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the tagged commit
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Prepare build directories
+        run: mkdir -p build dist
+
+      - name: Compile with TeX Live, latexmk, and pdfLaTeX
+        uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
+        with:
+          root_file: Quyen_ĐAMH.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
+
+      - name: Create PDF and first-page preview
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes poppler-utils
+          cp "build/Quyen_ĐAMH.pdf" dist/Quyen_DAMH.pdf
+          pdftoppm -png -f 1 -singlefile -r 144 \
+            dist/Quyen_DAMH.pdf dist/preview
+
+      - name: Package the exact committed sources
+        shell: bash
+        run: |
+          prefix="mau-latex-damh-${GITHUB_REF_NAME}/"
+          git archive \
+            --format=tar.gz \
+            --prefix="$prefix" \
+            --output=dist/mau-latex-damh-source.tar.gz \
+            "$GITHUB_SHA"
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-build-${{ github.sha }}
+          path: |
+            dist/Quyen_DAMH.pdf
+            dist/preview.png
+            dist/mau-latex-damh-source.tar.gz
+          if-no-files-found: error
+
+      - name: Create GitHub Release for v* tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            dist/Quyen_DAMH.pdf \
+            dist/mau-latex-damh-source.tar.gz \
+            --verify-tag \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes
+
