@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Check out the tagged commit
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
@@ -52,7 +52,7 @@ jobs:
             "$GITHUB_SHA"
 
       - name: Upload workflow artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: latex-build-${{ github.sha }}
           path: |
