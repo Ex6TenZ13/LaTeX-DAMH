@@ -1,9 +1,9 @@
-# LaTeX-DATN
+# LaTeX-ĐAMH
 
-[![Mở bản PDF](preview.png)](https://github.com/Ex6TenZ13/LaTeX-DATN/blob/main/Quyen_DAMH.pdf)
+[![Mở bản PDF](preview.png)](https://github.com/Ex6TenZ13/LaTeX-DAMH/blob/main/Quyen_DAMH.pdf)
 
 Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Các bản PDF đã phát hành
-có tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DATN/releases/latest).
+có tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
 
 ## Cài đặt trên Windows
 
@@ -34,12 +34,7 @@ MiKTeX cài package tự động, rồi build lại.
 
 ## Gói nguồn của release
 
-Mỗi release chứa `Quyen_DAMH.pdf` và `LaTeX-DATN-source.zip`. File ZIP được tạo
+Mỗi release chứa `Quyen_DAMH.pdf` và `LaTeX-DAMH-source.zip`. File ZIP được tạo
 trực tiếp bằng `git archive`, vì vậy chỉ chứa đúng các tệp đã commit tại tag phát
 hành, không chứa thư mục `.git` hoặc file build tạm.
-
-Workflow dùng ZIP thay cho RAR vì RAR CLI chính thức là phần mềm thương mại, chỉ
-được dùng miễn phí trong thời gian đánh giá 40 ngày. Dự án không đổi tên ZIP
-thành `.rar`. Nếu có giấy phép RAR hợp lệ, có thể lưu khóa dưới dạng GitHub
-Actions secret và chạy RAR CLI đã đăng ký trên runner.
 
