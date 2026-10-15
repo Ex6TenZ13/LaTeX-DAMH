@@ -44,11 +44,11 @@ jobs:
       - name: Package the exact committed sources
         shell: bash
         run: |
-          prefix="mau-latex-damh-${GITHUB_REF_NAME}/"
+          prefix="LaTeX-DAMH-${GITHUB_REF_NAME}/"
           git archive \
-            --format=tar.gz \
+            --format=zip \
             --prefix="$prefix" \
-            --output=dist/mau-latex-damh-source.tar.gz \
+            --output=dist/LaTeX-DAMH-source.zip \
             "$GITHUB_SHA"
 
       - name: Upload workflow artifacts
@@ -58,7 +58,7 @@ jobs:
           path: |
             dist/Quyen_DAMH.pdf
             dist/preview.png
-            dist/mau-latex-damh-source.tar.gz
+            dist/LaTeX-DAMH-source.zip
           if-no-files-found: error
 
       - name: Create GitHub Release for v* tag
@@ -68,7 +68,7 @@ jobs:
         run: |
           gh release create "$GITHUB_REF_NAME" \
             dist/Quyen_DAMH.pdf \
-            dist/mau-latex-damh-source.tar.gz \
+            dist/LaTeX-DAMH-source.zip \
             --verify-tag \
             --title "$GITHUB_REF_NAME" \
             --generate-notes

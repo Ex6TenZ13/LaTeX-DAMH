@@ -16,6 +16,7 @@
 
 # Generated documents and temporary build directories
 *.pdf
+!Quyen_DAMH.pdf
 build/
 dist/
 

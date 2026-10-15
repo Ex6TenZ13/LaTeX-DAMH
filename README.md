@@ -1,8 +1,9 @@
-# Mẫu báo cáo LaTeX ĐAMH
+# LaTeX-ĐAMH
 
-[![Xem PDF của bản phát hành mới nhất](preview.png)](https://github.com/Ex6TenZ13/mau-latex-damh/releases/latest/download/Quyen_DAMH.pdf)
+[![Mở bản PDF](preview.png)](https://github.com/Ex6TenZ13/LaTeX-DAMH/blob/main/Quyen_DAMH.pdf)
 
-Nhấn vào ảnh xem trước để tải PDF của bản phát hành mới nhất.
+Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Các bản PDF đã phát hành
+có tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
 
 ## Biên dịch
 
@@ -17,11 +18,36 @@ GitHub Actions biên dịch tài liệu khi có thay đổi trên `main`, khi m�
 request, hoặc khi đẩy tag bắt đầu bằng `v`. Với tag `v*`, workflow tạo GitHub
 Release gồm PDF và gói mã nguồn lấy trực tiếp từ commit được gắn tag.
 
-## Định dạng gói nguồn
+## Cài đặt trên Windows
 
-Release dùng `mau-latex-damh-source.tar.gz` thay cho `.rar`. Công cụ RAR chính
-thức chỉ được dùng miễn phí trong thời gian đánh giá 40 ngày; runner hiện không
-có giấy phép thương mại. 7-Zip cũng không hỗ trợ tạo RAR, nên dự án không đổi tên
-ZIP thành `.rar`. Nếu có giấy phép RAR hợp lệ, có thể bổ sung khóa giấy phép dưới
-dạng GitHub Actions secret và thay bước `git archive` bằng RAR CLI đã đăng ký.
+1. Cài [MiKTeX](https://miktex.org/download) bằng **Basic MiKTeX Installer**.
+   Nên chọn cài cho người dùng hiện tại, đặt khổ giấy A4 và chọn **Always** hoặc
+   **Ask me first** để MiKTeX cài các package còn thiếu. Sau khi cài, mở
+   **MiKTeX Console**, chọn **Updates** và cập nhật toàn bộ package.
+2. Cài [TeXstudio](https://texstudio.org/) bằng bản Windows Installer. Mở
+   **Options → Configure TeXstudio → Build**, chọn **PdfLaTeX** làm trình biên
+   dịch mặc định. Mở `Quyen_ĐAMH.tex`, sau đó dùng **Build & View** (`F5`).
+3. Cài [SumatraPDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer).
+   Để dùng SumatraPDF thay trình xem tích hợp, vào **Options → Configure
+   TeXstudio → Commands** và đặt lệnh External PDF Viewer:
+
+   ```text
+   "C:/Program Files/SumatraPDF/SumatraPDF.exe" -reuse-instance -forward-search "?c:am.tex" @ "?am.pdf"
+   ```
+
+   Trong SumatraPDF, nhấn `Ctrl+K`, chọn **Set Inverse Search Command Line** và
+   nhập:
+
+   ```text
+   "C:\Program Files\TeXstudio\texstudio.exe" "%f" -line %l
+   ```
+
+Nếu TeXstudio báo thiếu package, mở MiKTeX Console để cập nhật hoặc cho phép
+MiKTeX cài package tự động, rồi build lại.
+
+## Gói nguồn của release
+
+Mỗi release chứa `Quyen_DAMH.pdf` và `LaTeX-DAMH-source.zip`. File ZIP được tạo
+trực tiếp bằng `git archive`, vì vậy chỉ chứa đúng các tệp đã commit tại tag phát
+hành, không chứa thư mục `.git` hoặc file build tạm.
 
