@@ -15,7 +15,7 @@ có tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/late
    **MiKTeX Console**, chọn **Updates** và cập nhật toàn bộ package.
 2. Cài [TeXstudio](https://texstudio.org/) bằng bản Windows Installer. Mở
    **Options → Configure TeXstudio → Build**, chọn **PdfLaTeX** làm trình biên
-   dịch mặc định. Mở `Quyen_ĐAMH.tex`, sau đó dùng **Build & View** (`F5`).
+   dịch mặc định. Mở `Quyen_DAMH.tex`, sau đó dùng **Build & View** (`F5`).
 3. Cài [SumatraPDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer).
    Để dùng SumatraPDF thay trình xem tích hợp, vào **Options → Configure
    TeXstudio → Commands** và đặt lệnh External PDF Viewer:

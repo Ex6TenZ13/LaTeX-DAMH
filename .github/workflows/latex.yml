@@ -30,14 +30,14 @@ jobs:
       - name: Compile with TeX Live, latexmk, and pdfLaTeX
         uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # 4.1.0
         with:
-          root_file: Quyen_ĐAMH.tex
+          root_file: Quyen_DAMH.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
 
       - name: Create PDF and first-page preview
         run: |
           sudo apt-get update
           sudo apt-get install --yes poppler-utils
-          cp "build/Quyen_ĐAMH.pdf" dist/Quyen_DAMH.pdf
+          cp "build/Quyen_DAMH.pdf" dist/Quyen_DAMH.pdf
           pdftoppm -png -f 1 -singlefile -r 144 \
             dist/Quyen_DAMH.pdf dist/preview
 
