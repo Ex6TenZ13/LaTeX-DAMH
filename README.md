@@ -13,6 +13,14 @@
 Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Các bản PDF đã phát hành
 có tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
 
+## Tải và sử dụng gói ZIP
+
+1. Tải [gói ZIP mã nguồn của bản phát hành mới nhất](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest/download/LaTeX-DAMH-source.zip) từ mục **Assets** trong trang Releases.
+2. Giải nén ZIP vào một thư mục trên máy tính; không mở hoặc biên dịch tệp `.tex` trực tiếp bên trong ZIP. Giữ nguyên cấu trúc thư mục và các tệp đi kèm.
+3. Mở TeXstudio, dùng **File → Open** để đi tới thư mục vừa giải nén và mở `Quyen_DAMH.tex`. TeXstudio sẽ hiển thị các tệp cùng thư mục trong **File Explorer**; chọn **Build & View** hoặc nhấn `F5` để biên dịch và xem PDF.
+
+Gói ZIP chứa mã nguồn và tài nguyên của mẫu, không phải file PDF đã biên dịch. Nếu TeXstudio/MiKTeX hỏi cài package còn thiếu, hãy cho phép cài đặt rồi biên dịch lại.
+
 ## Cài đặt trên Windows
 
 1. Cài [MiKTeX](https://miktex.org/download) bằng **Basic MiKTeX Installer**.
