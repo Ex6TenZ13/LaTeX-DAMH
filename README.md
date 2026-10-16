@@ -2,6 +2,8 @@
 
 [![LaTeX PDF and release](https://github.com/Ex6TenZ13/LaTeX-DAMH/actions/workflows/latex.yml/badge.svg?branch=main)](https://github.com/Ex6TenZ13/LaTeX-DAMH/actions/workflows/latex.yml)
 
+[English version](#english)
+
 > 📣 **Mẫu LaTeX ĐAMH đang trong quá trình chỉnh sửa và hoàn thiện**
 >
 > Nội dung, cấu trúc và định dạng trong các tệp `.tex` có thể thay đổi; PDF và ảnh xem trước sẽ được cập nhật theo. Nếu đang sử dụng mẫu, hãy kiểm tra [bản phát hành mới nhất](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest) trước khi bắt đầu hoặc tiếp tục báo cáo.
@@ -53,4 +55,50 @@ MiKTeX cài package tự động, rồi build lại.
 Mỗi release chứa `Quyen_DAMH.pdf` và `LaTeX-DAMH-source.zip`. File ZIP được tạo
 trực tiếp từ commit của tag bằng `git archive`; README, thư mục `.git` và các file
 build tạm không nằm trong gói.
+
+---
+
+## English
+
+### Update notice
+
+> 📣 **The LaTeX-DAMH template is being revised and finalized.**
+>
+> The content, structure, and formatting of the `.tex` files may change. The PDF and preview image will be updated accordingly. If you are using this template, check the [latest release](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest) before starting or continuing your report.
+>
+> Have an idea or found an issue? Please share it via [Issues](https://github.com/Ex6TenZ13/LaTeX-DAMH/issues). Include the relevant file or section, your suggestion or a description of the problem, and a screenshot if helpful.
+
+### PDF preview and releases
+
+Click the preview image above to open the PDF directly on GitHub. Released PDFs are available on the [Releases page](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
+
+### Download and use the ZIP package
+
+1. Download the [latest source ZIP package](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest/download/LaTeX-DAMH-source.zip) from the **Assets** section of the Releases page.
+2. Extract the ZIP archive to a folder on your computer. Do not open or compile the `.tex` file directly from inside the archive. Keep the folder structure and accompanying files unchanged.
+3. In TeXstudio, choose **File → Open**, navigate to the extracted folder, and open `Quyen_DAMH.tex`. TeXstudio's **File Explorer** shows the other files in the same folder. Select **Build & View** or press `F5` to compile the document and view the PDF.
+
+The ZIP package contains the template's source files and resources, not the compiled PDF. If TeXstudio/MiKTeX asks to install missing packages, allow the installation and compile again.
+
+### Installing on Windows
+
+1. Install [MiKTeX](https://miktex.org/download) using the **Basic MiKTeX Installer**. Install it for the current user, set the paper size to A4, and choose **Always** or **Ask me first** so MiKTeX can install missing packages. After installation, open **MiKTeX Console**, go to **Updates**, and install all updates.
+2. Install [TeXstudio](https://texstudio.org/) using the Windows installer. Open **Options → Configure TeXstudio → Build** and set **PdfLaTeX** as the default compiler. Open `Quyen_DAMH.tex`, then select **Build & View** (`F5`).
+3. Install [SumatraPDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer). To use it instead of TeXstudio's built-in PDF viewer, go to **Options → Configure TeXstudio → Commands** and set the External PDF Viewer command to:
+
+   ```text
+   "C:/Program Files/SumatraPDF/SumatraPDF.exe" -reuse-instance -forward-search "?c:am.tex" @ "?am.pdf"
+   ```
+
+   In SumatraPDF, press `Ctrl+K`, choose **Set Inverse Search Command Line**, and enter:
+
+   ```text
+   "C:\Program Files\TeXstudio\texstudio.exe" "%f" -line %l
+   ```
+
+If TeXstudio reports a missing package, open MiKTeX Console to update packages or allow MiKTeX to install packages automatically, then compile again.
+
+### Release source package
+
+Each release contains `Quyen_DAMH.pdf` and `LaTeX-DAMH-source.zip`. The ZIP is created from the tagged commit using `git archive`; it excludes the README, the `.git` directory, and temporary build files.
 
