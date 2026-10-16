@@ -48,9 +48,12 @@ jobs:
           git archive \
             --format=zip \
             --prefix="$prefix" \
-            --output=dist/LaTeX-DAMH-source.zip \
+            --output=dist/LaTeX-DAMH.zip \
             "$GITHUB_SHA" \
-            ':(exclude)README.md'
+            Quyen_DAMH.tex \
+            References.bib \
+            Regulations.tex \
+            figures/
 
       - name: Upload workflow artifacts
         uses: actions/upload-artifact@v7.0.2
@@ -59,7 +62,7 @@ jobs:
           path: |
             dist/Quyen_DAMH.pdf
             dist/preview.png
-            dist/LaTeX-DAMH-source.zip
+            dist/LaTeX-DAMH.zip
           if-no-files-found: error
 
       - name: Create GitHub Release for v* tag
@@ -68,8 +71,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "$GITHUB_REF_NAME" \
-            dist/Quyen_DAMH.pdf \
-            dist/LaTeX-DAMH-source.zip \
+            dist/LaTeX-DAMH.zip \
             --verify-tag \
             --title "$GITHUB_REF_NAME" \
             --generate-notes

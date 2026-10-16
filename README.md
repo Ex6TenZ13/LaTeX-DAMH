@@ -12,12 +12,11 @@
 
 [![Mở bản PDF](preview.png)](https://github.com/Ex6TenZ13/LaTeX-DAMH/blob/main/Quyen_DAMH.pdf)
 
-Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Các bản PDF đã phát hành
-có tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
+Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Bản phát hành mới nhất có gói ZIP tải về tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest); PDF được xem riêng qua ảnh xem trước.
 
 ## Tải và sử dụng gói ZIP
 
-1. Tải [gói ZIP mã nguồn của bản phát hành mới nhất](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest/download/LaTeX-DAMH-source.zip) từ mục **Assets** trong trang Releases.
+1. Tải [gói ZIP của bản phát hành mới nhất](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest/download/LaTeX-DAMH.zip) từ mục **Assets** trong trang Releases.
 2. Giải nén ZIP vào một thư mục trên máy tính; không mở hoặc biên dịch tệp `.tex` trực tiếp bên trong ZIP. Giữ nguyên cấu trúc thư mục và các tệp đi kèm.
 3. Mở TeXstudio, dùng **File → Open** để đi tới thư mục vừa giải nén và mở `Quyen_DAMH.tex`. TeXstudio sẽ hiển thị các tệp cùng thư mục trong **File Explorer**; chọn **Build & View** hoặc nhấn `F5` để biên dịch và xem PDF.
 
@@ -50,11 +49,9 @@ Gói ZIP chứa mã nguồn và tài nguyên của mẫu, không phải file PDF
 Nếu TeXstudio báo thiếu package, mở MiKTeX Console để cập nhật hoặc cho phép
 MiKTeX cài package tự động, rồi build lại.
 
-## Gói nguồn của release
+## Tệp đính kèm của bản phát hành
 
-Mỗi release chứa `Quyen_DAMH.pdf` và `LaTeX-DAMH-source.zip`. File ZIP được tạo
-trực tiếp từ commit của tag bằng `git archive`; README, thư mục `.git` và các file
-build tạm không nằm trong gói.
+Mỗi bản phát hành chỉ đính kèm một file tải về là `LaTeX-DAMH.zip`, gồm `Quyen_DAMH.tex`, `References.bib`, `Regulations.tex` và thư mục `figures/`. PDF được giữ riêng trong kho mã nguồn để xem trước, không đính kèm trong Releases.
 
 ---
 
@@ -70,11 +67,11 @@ build tạm không nằm trong gói.
 
 ### PDF preview and releases
 
-Click the preview image above to open the PDF directly on GitHub. Released PDFs are available on the [Releases page](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
+Click the preview image above to open the PDF directly on GitHub. The latest release provides a downloadable ZIP package on the [Releases page](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest); the PDF is viewed separately through the preview.
 
 ### Download and use the ZIP package
 
-1. Download the [latest source ZIP package](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest/download/LaTeX-DAMH-source.zip) from the **Assets** section of the Releases page.
+1. Download the [latest ZIP package](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest/download/LaTeX-DAMH.zip) from the **Assets** section of the Releases page.
 2. Extract the ZIP archive to a folder on your computer. Do not open or compile the `.tex` file directly from inside the archive. Keep the folder structure and accompanying files unchanged.
 3. In TeXstudio, choose **File → Open**, navigate to the extracted folder, and open `Quyen_DAMH.tex`. TeXstudio's **File Explorer** shows the other files in the same folder. Select **Build & View** or press `F5` to compile the document and view the PDF.
 
@@ -100,5 +97,5 @@ If TeXstudio reports a missing package, open MiKTeX Console to update packages o
 
 ### Release source package
 
-Each release contains `Quyen_DAMH.pdf` and `LaTeX-DAMH-source.zip`. The ZIP is created from the tagged commit using `git archive`; it excludes the README, the `.git` directory, and temporary build files.
+Each release has one downloadable asset: `LaTeX-DAMH.zip`. It contains `Quyen_DAMH.tex`, `References.bib`, `Regulations.tex`, and the `figures/` folder. The PDF is kept separately in the repository for preview and is not attached to the release.
 
