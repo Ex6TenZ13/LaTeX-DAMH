@@ -12,7 +12,7 @@
 
 [![Mở bản PDF](preview.png)](https://github.com/Ex6TenZ13/LaTeX-DAMH/blob/main/Quyen_DAMH.pdf)
 
-Nhấn vào ảnh xem trước để mở PDF trực tiếp trên GitHub. Bản phát hành mới nhất có gói ZIP tải về tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest); PDF được xem riêng qua ảnh xem trước.
+Nhấn vào ảnh để xem PDF mẫu báo cáo và các quy định về hình thức, cách trình bày báo cáo bằng LaTeX. Bản phát hành mới nhất có gói ZIP tải về tại trang [Releases](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
 
 ## Tải và sử dụng gói ZIP
 
@@ -67,7 +67,7 @@ Mỗi bản phát hành chỉ đính kèm một file tải về là `LaTeX-DAMH.
 
 ### PDF preview and releases
 
-Click the preview image above to open the PDF directly on GitHub. The latest release provides a downloadable ZIP package on the [Releases page](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest); the PDF is viewed separately through the preview.
+Click the image to view a sample report PDF and the guidelines for report formatting and presentation in LaTeX. The latest release provides a downloadable ZIP package on the [Releases page](https://github.com/Ex6TenZ13/LaTeX-DAMH/releases/latest).
 
 ### Download and use the ZIP package
 
